@@ -11,7 +11,7 @@ export function Login() {
         <div className="login-container">
             <div className="login-card">
                 <h2>EXAM CRAFT</h2>
-                <h3>Faculty Login</h3>
+                <h2>Faculty Login</h2>
                 <table>
                     <thead></thead>
                     <tbody>
