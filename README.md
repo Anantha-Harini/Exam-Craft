@@ -1,4 +1,4 @@
-# Automated Question Paper Generation System
+# Exam Craft - Automated Question Paper Generator
 
 A full-stack platform designed to help educational institutions and departments automatically generate structured, balanced exam question papers from a centralized question bank. It streamlines curriculum management and question authoring with separate portals for administrators and teachers.
 
@@ -6,7 +6,7 @@ Built with Node.js, Express, MongoDB, Angular (Admin), and React (Teacher).
 
 ## Features
 
-### Teacher Portal (Student Portal Equivalent)
+### Teacher Portal 
 - **Manage Question Bank:** Add new questions specifying subject, unit, difficulty, and marks.
 - **Review Questions:** View, edit, and delete existing questions from the centralized question bank.
 - **Secure Access:** Protected routes and secure login exclusively for authorized teaching staff.
