@@ -5,7 +5,7 @@ export function Dashboard() {
     const navigate = useNavigate();
     return (<div className="dashboard-page">
         <h1><i>EXAM CRAFT -Faculty Portal</i></h1>
-        <h2><i>DASHBOARD</i></h2>
+
 
         <div className="dashboard-cards">
             <div className="dashboard-card add-card">

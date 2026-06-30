@@ -1,5 +1,7 @@
 <div class="header">
-  <h1>EXAM CRAFT- Admin Portal</h1><br>
+  <br>
+  <h1>EXAM CRAFT- Admin Portal</h1>
+  <br>
   @if(authService.isLoggedIn()){
   <button class="logout-button" (click)="authService.logout()">Logout</button>
   @if(router.url!=='/dashboard'){
