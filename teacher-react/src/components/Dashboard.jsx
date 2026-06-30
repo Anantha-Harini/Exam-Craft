@@ -4,7 +4,7 @@ import "./dashboard.css";
 export function Dashboard() {
     const navigate = useNavigate();
     return (<div className="dashboard-page">
-        <h1><i>EXAM CRAFT - Faculty Portal</i></h1>
+        <h1>EXAM CRAFT - Faculty Portal</h1>
         <br></br>
 
         <div className="dashboard-cards">
