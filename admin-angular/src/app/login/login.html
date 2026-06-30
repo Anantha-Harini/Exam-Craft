@@ -1,0 +1,20 @@
+<div class="login">
+    <h2>Welcome !!!</h2>
+    <p>Please enter your credentials to log in.</p>
+    <table>
+            <tbody>
+            <tr>
+                    <td><label for="username">Username:</label></td>
+                    <td><input type="text" id="username" name="username"  required #uname></td>
+            </tr>
+            <tr>
+                    <td><label for="password">Password:</label></td>
+                    <td><input type="password" id="password" name="password"  required #pword></td>
+            </tr>
+            </tbody>
+    </table>
+    <button (click)="login(uname.value, pword.value); uname.value=''; pword.value=''" >Login</button>
+    @if(errorMessage()!=''){
+        <p style="color: red; margin:5px;">{{errorMessage()}}</p>
+    }
+</div>

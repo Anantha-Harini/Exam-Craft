@@ -1,0 +1,55 @@
+.header{
+     background: linear-gradient(to bottom right, #1f3a5f, #3f5f87);
+    color: #f5f7fa;
+    padding: 10px;
+    text-align: center;
+}
+.logout-button{
+    position: absolute;
+    top: 10px;
+    right: 45px;
+    padding: 10px 20px;
+    border-radius:10px;
+    border:2px solid #1f3a5f;
+    background-color:white;
+    color:#1f3a5f;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+.logout-button:hover{
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+.back-button{
+    position: absolute;
+    top: 10px;
+    right: 150px;
+    padding: 10px 20px;
+    border-radius:10px;
+    border:2px solid #1f3a5f;
+    background-color:white;
+    color:#1f3a5f;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+.back-button:hover{
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+.content {
+    margin: 20px;
+}
+:host {
+  display: block;
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #f1f4f8, #d9e2ec);
+}
+@media screen and (max-width:1000px)
+{
+   .logout-button,.back-button{
+        position:static;
+        margin:10px;
+   }
+}

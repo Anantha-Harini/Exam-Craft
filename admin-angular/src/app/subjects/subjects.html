@@ -1,0 +1,36 @@
+<h2>Manage Subjects</h2>
+<div class="add">
+    <h3>Add Subject</h3>
+    <input type="text" placeholder="Subject Name" #subjectName required><br>
+    <input type="text" placeholder="Subject Code" #subjectCode required><br>
+    <button (click)="addSubject(subjectName.value, subjectCode.value); subjectName.value = ''; subjectCode.value = '';" style="margin-top:10px;">Add</button>
+    @if(addMessage()!=''){
+        <p style="color: green; margin:5px;">{{addMessage()}}</p>
+    }
+</div>
+<div class="subjects-list">
+    <h3>Subjects List</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Subject Code</th>
+                <th>Subject Name</th>
+                <th>Units</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(subject of subjects();track $index){
+                <tr>
+                    <td>{{subject.code}}</td>
+                    <td>{{subject.name}}</td>
+                    <td>{{subject.units.length}}</td>
+                    <td><button (click)="deleteSubject(subject.name)">Delete</button></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    @if(delMessage()!=''){
+        <p style="color: green; margin:5px;">{{delMessage()}}</p>
+    }
+</div>

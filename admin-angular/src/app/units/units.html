@@ -1,0 +1,84 @@
+<h2>Manage Units</h2>
+<div class="add">
+    
+    @if(!editing())
+    {
+        <h3>Add Unit</h3>
+    }
+    @else
+    {
+        <h3>Edit Unit</h3>
+    }
+    <table>
+        <tbody>
+            <tr>
+                <td><label for="subject">Subject Name</label></td>
+                <td>
+                    <select  id="subject" #subjectSelect  [disabled]="editing()" required>
+                        <option value="" disabled selected>Select</option>
+                        @for(subject of data.subjects(); track subject.name){
+                            <option value="{{subject.name}}">{{subject.name}}</option>
+                        }
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="unit">Unit Name</label></td>
+                <td><input type="text" placeholder="Enter Unit Name" id="unit" #unitName required></td>
+            </tr>
+        </tbody>
+    </table>
+    @if(!editing())
+    {
+        <button (click)="addUnit(subjectSelect.value, unitName.value); unitName.value = ''; subjectSelect.value='';"  style="margin-top:10px;">Add</button>
+    }
+    @else
+    {
+        <button (click)="editUnit(subjectSelect.value,oldUnit(), unitName.value); unitName.value = ''; subjectSelect.value='';"  style="margin-top:10px;">Update</button>
+    }
+    @if(addMessage()!=''){
+        <p style="color: green; margin:5px;">{{addMessage()}}</p>
+    }
+</div>
+<div class="units-list">
+    <h3>Units List</h3>
+    <label for="sub">Subject Name</label>
+    <select  id="sub" (change)="selectedSubject.set(sub.value)" #sub required>
+            <option value="" disabled selected>Select</option>
+            @for(subject of data.subjects(); track subject.name){
+                <option value="{{subject.name}}">{{subject.name}}</option>
+            }
+    </select>
+    <table>
+        <thead>
+            <tr>
+                <th>Units</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if(selectedSubject()!=''){
+                @for(unit of getUnit(selectedSubject()); track $index){
+                <tr>
+                    <td>{{unit}}</td>
+                    <td>
+                    <button (click)="subjectSelect.value=selectedSubject(); unitName.value=unit; oldUnit.set(unit); editing.set(true)">Edit</button>
+                    
+                    <button (click)="deleteUnit(selectedSubject(), unit);">Delete</button>
+                    </td>
+                </tr>
+                }
+                @if(getUnit(selectedSubject()).length === 0)
+                {
+                <tr>
+                    <td colspan="2">No units found for the selected subject.</td>
+                </tr>
+                }
+            }
+        </tbody>
+    </table>
+    <br>
+    @if(delMessage()!=''){
+        <p style="color: green; margin:5px;">{{delMessage()}}</p>
+    }
+</div>

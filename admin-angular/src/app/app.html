@@ -1,0 +1,13 @@
+<div class="header">
+  <h1>Question Paper Generation System</h1><br>
+  <h2>Admin Panel</h2>
+  @if(authService.isLoggedIn()){
+  <button  class="logout-button" (click)="authService.logout()">Logout</button>
+  @if(router.url!=='/dashboard'){
+  <button  class="back-button" routerLink="/dashboard">Back</button>
+  }
+}
+</div>
+<div class="content">
+  <router-outlet></router-outlet>
+</div>

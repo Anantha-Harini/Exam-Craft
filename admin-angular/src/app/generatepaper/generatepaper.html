@@ -1,0 +1,48 @@
+<h2>Paper Generation</h2>
+<div class="generate-paper">
+    <label for="subject">Select Subject:</label>
+    <select id="subject" (change)="selectedSubject.set(Subject.value)" #Subject required>
+        <option value="" disabled selected>Select Subject</option>
+        @for(subject of subjects();track $index){
+            <option value={{subject.name}}>{{subject.name}}</option>
+        }
+    </select><br><br>
+    <label for="unit">Select Unit:</label>
+    <select id="unit" #selectedUnit multiple required>
+    
+        @for(unit of getUnits(selectedSubject());track $index){
+            <option value={{unit}}>{{unit}}</option>
+        }
+        @if(getUnits(selectedSubject()).length === 0 && selectedSubject() !== ''){
+            <option value="" disabled>No units available</option>
+        }
+    </select><br><br>
+    <label for="difficulty">Select Difficulty</label>
+    <select id="difficulty" #difficulty required>
+        <option value="" disabled selected>Select Difficulty</option>
+        <option value="Easy">Easy</option>
+        <option value="Medium">Medium</option>
+        <option value="Hard">Hard</option>
+     </select><br><br>
+     <label for="ExamType">Select Exam Type</label>
+     <select id="ExamType" #questionType required>
+        <option value="" disabled selected>Select Exam Type</option>
+        <option value="Assessment">Assessment</option>
+        <option value="Endsem">End-Sem</option>
+     </select><br><br>
+     
+    <button (click)="generatePaper(Subject.value, selectedUnit, difficulty.value, questionType.value)">Generate Paper</button>
+    
+    @if(generationMessage()!=''){
+        <p style="color: green; margin:5px;">{{generationMessage()}}</p>
+    }
+    <br><br>
+    @if(generatedPaper().length > 0){
+        <h3>Generated Question Paper:</h3>
+        @for(qn of generatedPaper(); track $index){
+            <p><strong>Q{{qn.marks}}:</strong> {{qn.question}}</p>
+        }
+        <button (click)="downloadPaperById()">Download Paper</button>
+    }
+    
+</div>

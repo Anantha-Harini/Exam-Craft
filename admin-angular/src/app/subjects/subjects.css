@@ -1,0 +1,79 @@
+h2{
+    text-align: center;
+    margin-bottom: 20px;
+    color: #1f3a5f;
+}
+h3{
+    text-align: center;
+    margin-bottom: 20px;
+    color:#2f4669;
+}
+.add{
+    background: linear-gradient(to bottom right, #eef2f7, #dfe6ef);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(31, 58, 95, 0.15);
+    padding: 20px 100px 50px 100px;
+    margin: auto;
+    width: 300px;
+    text-align: center;
+    
+}
+.subjects-list{
+    background: linear-gradient(to bottom right, #eef2f7, #dfe6ef);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(31, 58, 95, 0.15);
+    padding: 20px 50px 20px 50px;
+    margin: auto;
+    margin-top:30px;
+    width: 400px;
+    text-align: center;
+}
+input{
+    margin: 10px 5px;
+    padding: 7px ;
+    border-radius:10px;
+    border:1px solid #c7d0dd;
+    width: 80%;
+}
+button{
+    
+    padding: 5px 10px;
+    border-radius:5px;
+    border:2px solid #1f3a5f;
+    background-color: #1f3a5f;
+    color:white;
+    cursor: pointer;
+    font-size:16px;
+    
+}
+button:hover{
+    border:2px solid #16314f;
+    background-color: #16314f;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+th, td{
+    border: 1px solid #c7d0dd;
+    padding: 10px;
+    
+}
+th{
+    background-color: #1f3a5f;
+    color: white;
+}
+tr{
+    background-color: #edf0f4;
+}
+@media screen and (max-width: 600px) {
+    .add,
+    .subjects-list {
+        width: 75%;
+        padding:5%;
+    }
+    .subjects-list {
+        overflow-x: auto; 
+    }    
+}

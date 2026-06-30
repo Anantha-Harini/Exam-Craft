@@ -1,0 +1,32 @@
+h1{
+    color:crimson;
+}
+h2{
+    color:blueviolet;
+    
+}
+.dashboard{ 
+    display: flex;
+    cursor: pointer;
+    justify-content: center; 
+    gap: 30px;           
+}
+button{
+    cursor: pointer;
+    justify-content: center; 
+}
+
+*{
+    place-items: center;
+}
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
+th,td{
+    padding: 8px;
+}
+
+
+
+

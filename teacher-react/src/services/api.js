@@ -1,0 +1,1 @@
+export const API_URL="https://automated-question-paper-generation.onrender.com";
